@@ -1,6 +1,6 @@
 import { CButton, CModal, CModalBody, CModalFooter, CModalHeader, CModalTitle } from '@coreui/react'
 import React, { useEffect, useState } from 'react'
-import {AiFillDelete} from 'react-icons/ai'
+import {AiFillDelete, AiFillEdit} from 'react-icons/ai'
 
 function ToDo() {
 
@@ -153,6 +153,7 @@ function ToDo() {
                     <th>S.No</th>
                     <th>Name</th>
                     <th>Discription</th>
+                    <th>Edit</th>
                     <th>Delete</th>
                 </tr>
             </thead>
@@ -162,7 +163,7 @@ function ToDo() {
                     <td>{i+1}</td>
                     <td>{x.title}</td>
                     <td>{x.discription}</td>
-                    <td onClick={() => editItem(i)}>Edit</td>
+                    <td><AiFillEdit style={{cursor:'pointer', fontSize:'30px',color:'#0d6efd'}} onClick={() => editItem(i)}/></td>
                     <td><AiFillDelete style={{cursor:'pointer', fontSize:'30px',color:'#dc3c45'}} onClick={()=>removeItem(i)}/></td>
                 </tr>
                 ))}
